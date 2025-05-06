@@ -1,0 +1,88 @@
+
+there are 2 types of locators
+
+CSS and Xpath
+
+-Absolute XPath and Relative XPath
+
+CSS
+
+-By the web  element tag 
+
+<div id ="techglogal" class "lkdjcnkjvn"> </div>
+<button>
+<a>
+<img>
+<ol>
+<ul>
+<li>
+<input>
+<lable>
+<select>
+<p>
+<h1>
+
+Properties of web element : attribute, color, visible text,
+type of markup language html, xml,ymal files
+
+structure, parent and child
+
+div is a container
+
+<div id = "container">
+   <div>
+        <div class = "cl cont"> // 2 classes
+               <ol>
+                     <li></li>
+                     <li></li>
+                     <li></li>
+                </ol>
+        </div>        
+  </div>
+</div>
+
+the most simple way to tag the web element is by tag
+
+
+1. <tag>
+2 id (#) or class (.)
+3. div.cl.cont | div > div>  div.cl.cont | div#container > div > div.cl.cont | #container div.cl.cont
+4. sibiling selector : + (immediat sibiling) or ~ (get other sibilings)
+5 * is wild card 
+
+
+data attribute
+
+	CSS Locators
+
+	Attribute Selectors
+
+         data-testid is for serverce
+		<input data-testid="element1" value="apple" type="checkbox">
+
+		Why we need the Attribute Selectors ?
+		to find elements that does not have unique id, dynamic or chaining them
+
+
+		-[data-testid="element1"]
+		-[value="apple"]
+		-[type="checkbox"]
+
+
+		<input id="input1">
+		<input id="input2">
+		<input id="input3">
+
+		cy.get('#input1, #input2, #input3')
+
+		cy.get('[id^="input]')
+
+
+
+xpath by visibil text, and go to parent
+
+	- PSUEDO CLASSES IN CSS
+       allowing us to target elements by the state, enable, checkend, required, child (syntax :(colon))
+
+		* input:checked
+		* input:last-child
