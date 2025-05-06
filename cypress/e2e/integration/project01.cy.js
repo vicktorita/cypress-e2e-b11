@@ -31,13 +31,12 @@ describe('Form- Elements Project', ()=>{
 
       const expectedOptions = ['Male', 'Female', 'Prefer not to disclose'];
 
-      // look for label to see the visible text
       cy.get('.radio').should('have.length', 3).each((el, index) => {
         expect(el).to.be.visible;
         expect(el.text()).equal(expectedOptions[index]);
         cy.wrap(el).should('be.visible').and('have.text', expectedOptions[index]).and('not.be.checked');
        
-       // look for input to make sure its checked or not
+      
         cy.wrap(el)
         .find('input[type="radio"]')
         .should('be.enabled')
