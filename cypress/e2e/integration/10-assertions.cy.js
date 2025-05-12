@@ -71,6 +71,8 @@ describe("Cypress Assertion", () => {
         expect(el.attr("class").includes("button"));
       });
   
+      // use invoke when u need to extract some info
+
       cy.get("#dropdown-testing")
         .invoke("text")
         .then((txt) => {
@@ -84,9 +86,10 @@ describe("Cypress Assertion", () => {
       Hover over Exercises Nav Item
       Validate below option are visible, clickable, and make sure their text are correct
         Java Exercises
-        JS Exercises
+        JS Exercises 
       */
-  
+    /// usefulll 
+
       const expectedOptions = ["Java Exercises", "JS Exercises"];
   
       cy.get("#dropdown-exercises").realHover();
@@ -112,11 +115,16 @@ describe("Cypress Assertion", () => {
       //   .and("have.text", "JS Exercises");
     });
   
-    it('Explicit Assertions with each() 2', () => {
+    it.only('Explicit Assertions with each() 2', () => {
       /*
       Validate there 5 social media icons are visible in the footer
       Validate all the links has "techglobal" in href attribute
       Validate all the links has target attribute value is "_blank"
       */
+
+     cy.get('.Footer_socials__7h4n1').then(el =>{
+      console.log(el)
+     })
+
     });
   });

@@ -16,7 +16,7 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 import '@4tw/cypress-drag-drop'
-import 'cypress-real-events'
+import 'cypress-real-events' /// for hover over
 
 // beforeEach(() => {
 //     cy.visit("https://www.techglobal-training.com/frontend");

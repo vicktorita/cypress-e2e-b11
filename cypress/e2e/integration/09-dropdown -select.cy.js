@@ -51,6 +51,8 @@ describe("Dropdown select", () => {
       cy.get('span[aria-label="Delivery"]').click();
     });
   
+
+    
     [
       {
         product: "Apple Watch Series 8",

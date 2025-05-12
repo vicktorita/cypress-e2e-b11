@@ -1,4 +1,4 @@
-  <reference types="cypress" />
+ /// <reference types="cypress" />
 
 it('Validate TechGlobal URL and title', () => {
   cy.visit('https://www.techglobal-training.com/');
