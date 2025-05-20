@@ -122,9 +122,18 @@ describe("Cypress Assertion", () => {
       Validate all the links has target attribute value is "_blank"
       */
 
-     cy.get('.Footer_socials__7h4n1').then(el =>{
-      console.log(el)
-     })
+    cy.get ('#main_heading').then(($el) => {
+      cy.log($el);
+      cy.log(el.text
+        // we convert with wrap back to cypress for soft assertion should()
+        //cy.wrap($el).shpuld('have.text', 'text')
+      )
+    })// more flexible// retrieves the property of previouse lement and its not defined
+    // retrieves as a jquery object
+    //then gives ur interaction with js  
 
-    });
-  });
+    cy.get('#main_heading').invoke('text').then((text) => {
+      cy.log(text)
+    })// tells right away what they want // text 
+  })
+})

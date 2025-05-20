@@ -92,13 +92,16 @@ describe('Cypress Custom Commands', () => {
 
 
     /*
- "test": "npx cypress run",
+ "test": "npx cypress run", npm t or npm test
     "test:open": "npx cypress open",
     "test:config": "npm t -- --browser chrome --config viewportHeight=720,viewportWidth=1080 --headed",
 
     "npx cypress run", => npm t -- important (' --') always to make it work behaves like concatination +
     we combime npm and npx everything else is cypress runner
-    
+     npm t --  --headed
+     npm run test:config
+
+     // run headead and after run headless
     */
   })
 })

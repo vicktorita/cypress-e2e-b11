@@ -96,12 +96,17 @@ describe("Handling Alerts", () => {
 
        //cy.get('#'prompt_alert).click();
 
-       
+
       // Clicks okay and sends message through the prompt
       // cy.window().then((win) => {
-      //   cy.stub(win, 'prompt').returns('TechGlobal school message')
+      //   cy.stub(win, 'prompt').returns('TechGlobal school message')// clicks ok by default
+
       // })
   
+
+       //cy.get('#'prompt_alert).click();
+
+
       // cy.window().then((win) => {
       //   cy.stub(win, 'prompt').returns('')
       // })
@@ -110,11 +115,13 @@ describe("Handling Alerts", () => {
       // cy.window().then((win) => {
       //   cy.stub(win, 'prompt').callsFake((message) => {
       //     console.log(message)
-      //     expect(message).to.eq('What would you like to say to TechGlobal?')
+      //     expect(message).to.eq('What would you like to say to TechGlobal?')// retrieve message
   
-      //     return null
+      //     return null// click on cancel
+
       //   })
       // })
+       //cy.get('#'prompt_alert).click();
   
   
   
@@ -127,7 +134,7 @@ describe("Handling Alerts", () => {
         })
       })
   
-      cy.get('#prompt_alert').click()
+      cy.get('#prompt_alert').click() // we only use it after bcz we do not use event listener
   
     })
   });

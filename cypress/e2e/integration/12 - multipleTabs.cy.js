@@ -7,9 +7,10 @@ describe("Handling Multiple Windows", () => {
     });
   
     it("Tabs", () => {
-      cy.get("#microsoft").should("have.attr", "target", "_blank");
+      cy.get("#microsoft").should("have.attr", "target", "_blank");  /// do not click... will not work
+
   
-      cy.get("#microsoft").invoke("removeAttr", "target").click();
+      cy.get("#microsoft").invoke("removeAttr", "target").click(); // to open in the same tab // we remove the attribute target
     });
   
     /**
@@ -22,12 +23,12 @@ describe("Handling Multiple Windows", () => {
      */
     it('Test Case', () => {
       cy.get('#apple').invoke('removeAttr', 'target').click()
-      cy.title().should('contain', 'Apple')
+      cy.title().should('contain', 'Apple')// for title is contain for webelement have txt
     
-      cy.go(-1)
+      cy.go(-1) // go back 
     
-      cy.title().then((title) => {
-        cy.wrap(title.toLowerCase()).should('contain', 'techglobal')
+      cy.title().then((title) => {// no jquery// title is a string
+        cy.wrap(title.toLowerCase()).should('contain', 'techglobal')//put to lowercase to 
       })
     })
   

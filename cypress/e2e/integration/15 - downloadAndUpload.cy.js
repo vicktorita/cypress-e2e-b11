@@ -13,7 +13,7 @@ describe("File Download & File Upload", () => {
   });
 
   const fileName = "SampleText.txt";
-  const downloadPath = path.join("cypress/downloads", fileName);
+  const downloadPath = path.join("cypress/downloads", fileName); // we use ,join() so we can use it on mac or windows
 // fs file system
   it("File Download", () => {
     cy.get("#file_download").click();
@@ -23,7 +23,7 @@ describe("File Download & File Upload", () => {
     // in node .js ways to read file
     // fs.readSync()
     // cy.fixture()
-    // fs.unlink('cypress/downloads/SampleText.txt')
+    // fs.unlink('cypress/downloads/SampleText.txt')// removes the file
   });
 
   /**
@@ -39,7 +39,8 @@ describe("File Download & File Upload", () => {
     // Uploading multiple files
     // cy.get("#file_upload").selectFile(["path1/file.txt", "path2/file.txt"]);
 
-    // Uploading with drag and drop
+    // Uploading with drag and drop // some application use this for mutiple files
+    
     // cy.get("#file_upload").selectFile(downloadPath, { action: "drag-drop" });
 
     cy.get("#file_upload").selectFile(downloadPath);

@@ -115,6 +115,7 @@ Cypress.Commands.add(
 Cypress.Commands.add(
   'assertAttribute',
   { prevSubject: true },
+                      //  give value to value
   (subject, attribute, value = null) => {
     if (value === null) {
       cy.wrap(subject).should('have.attr', attribute)

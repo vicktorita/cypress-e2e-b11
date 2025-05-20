@@ -7,9 +7,10 @@ describe("Keyboard & Mouse Actions", () => {
     });
   
     it("Mouse actions using Cypress events", () => {
-      // cy.get('#dropdown-testing').trigger('mouseover')
+      // cy.get('#dropdown-testing').trigger('mouseover') // does not work// cypress wvwnts are simulating
+
   
-      cy.get("#dropdown-testing").realHover();
+      cy.get("#dropdown-testing").realHover();// real events library
     });
   
     it('Keyboard Actions', () => {
@@ -24,7 +25,7 @@ describe("Keyboard & Mouse Actions", () => {
       .realPress('ArrowLeft')
       .realPress('KeyR')
       .realPress('Backspace')
-      // .realPress(['Shift', 'KeyA'])
+      // .realPress(['Shift', 'KeyA']) does not work shift
       // .realPress('Shift')
       // .realPress(["Alt", "Meta", "a"])
     })
@@ -32,7 +33,7 @@ describe("Keyboard & Mouse Actions", () => {
     /**
      * Go to https://techglobal-training.com/frontend/
      * Click on the "Actions" card
-     * Verify that the user is redirected to the Actions page
+     * Verify that the user  is redirected to the Actions page
      * Verify that the first three web elements are present and labeled as "Click on me", "Right-Click on me", and "Double-Click on me"
      * Perform a click action on the first web element labeled "Click on me"
      * Verify that a message appears next to the element stating, "You clicked on a button!"
@@ -42,14 +43,14 @@ describe("Keyboard & Mouse Actions", () => {
      * Verify that the message appears next to the element stating, "You double-clicked on a button!"
      */
     it('Right Click and Double Click', () => {
-      // cy.url().should('contain', 'actions')
+      // cy.url().should('contain', 'actions') not reliable
   
       cy.url().then((url) => {
         const actions = url.slice(url.lastIndexOf('/') +1)
         cy.wrap(actions).should('eq', 'actions')
       })
   
-      cy.get('[id$="click"]').as('buttons')
+      cy.get('[id$="click"]').as('buttons')// as alias 
   
       cy.get('@buttons').first().should('have.text', 'Click on me').click()
       .next().should('have.text', 'You clicked on a button!')

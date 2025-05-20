@@ -3,7 +3,10 @@ import BasePage from './BasePage'
 
 class LoginPage extends BasePage {
 
-  /* Locators */
+  /* Locators */   
+
+  //suggestion name the locator methods starts with get
+  //
   getUsernameField() {
     return cy.get('#username')
   }
@@ -25,6 +28,8 @@ class LoginPage extends BasePage {
   }
 
   /* Methods */
+
+  //action methdos
   clickLoginButton() {
     this.getSubmitButton().click()
   }

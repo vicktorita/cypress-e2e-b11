@@ -6,6 +6,7 @@ describe('Login Page Test', { tags: '@regression' }, () => {
     cy.visit(`${Cypress.env('SITE_URL')}/frontend`)
     cy.clickCard('Login Function')
   ///put it in the before each method// example is the file name in fixtures folder
+  // then is to fetch data in json file
     cy.fixture('example').then(function(data) {
       this.username = data.username
       this.password = data.password
@@ -27,9 +28,9 @@ describe('Login Page Test', { tags: '@regression' }, () => {
     cy.get('#success_lgn').should('be.visible')
   })
 
-  it('Login with POM', function() {
+  it('Login with POM', function() {// look for function scope
     // loginPage.userLogin(Cypress.env("UI_USERNAME"), Cypress.env("UI_PASSWORD"));
-    loginPage.userLogin(this.username, this.password)
+    loginPage.userLogin(this.username, this.password)  // takind the data drom fixures
     loginPage.getSuccessMessage().should('be.visible')
   })
 
@@ -46,5 +47,8 @@ describe('Login Page Test', { tags: '@regression' }, () => {
     loginPage.getErrorMessage().should('have.text', 'Invalid Username entered!')
 
     loginPage.getLogo()
+
+    // () arrow function has its own scope
+
   })
 })

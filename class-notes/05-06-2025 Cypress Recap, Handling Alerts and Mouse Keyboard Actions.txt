@@ -28,13 +28,14 @@
 			cy.title()
 			cy.url()
 
-			cy.get() <body>My Content</body>// limit... in can not  go inside
+			cy.get() <body>My Content</body>// limit... in can not  go inside the body with its()
 
 			To access the content in iframe, first we must target the iFrame ITSELF.
 
 			cy.get('#iFrame')
-			.its('0.contentDocument.body')
-			.find('#whateveryouwant')
+			.its('0.contentDocument.body') 
+			.find('#whateveryouwant')// property
+            // . get is a parent method that why we use .find()
 
 
 			SCENARIO | IFRAME INSIDE THE IFRAME
@@ -47,6 +48,8 @@
 
 
 		MULTIPLE TABS
+
+        cypress arhitecture  does not allowed to interect a new browser
 
 			<a target="_blank">
 

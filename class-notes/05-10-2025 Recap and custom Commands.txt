@@ -17,7 +17,9 @@
 			cy.get('uploadInput').selectFile('downloads/downloadPath/file.csv')			=> single file upload
 
 
-			cy.get('uploadInput').selectFile(['downloads/file.csv', 'path2'])			=> multiple files upload
+			cy.get('uploadInput').selectFile(['downloads/file.csv', 'path2'])			=> multiple files upload // array of text
 
 
-			cy.get('uploadInput').selectFile('downloads/downloadPath/file.csv', { action: 'drag-drop' })
+			cy.get('uploadInput').selectFile('downloads/downloadPath/file.csv', { action: 'drag-drop' }) /// the only upload accept with drag and drop
+
+            // realclick problem we have to update library// maintanance issues

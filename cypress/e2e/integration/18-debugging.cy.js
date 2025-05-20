@@ -10,7 +10,7 @@ describe('Debugging', () => {
 
     cy.get('#checkbox_1').check()
 
-    // cy.wait(10000)
+    // cy.wait(10000) only debbugging putposes cy.wait()
 
     cy.get('#checkbox_2').check()
   })
@@ -22,7 +22,8 @@ describe('Debugging', () => {
 
     cy.get('#username').type(Cypress.env('UI_USERNAME'))
 
-    // cy.pause()
+    // cy.pause() better than cy.wait
+
 
     cy.get('#password').type(Cypress.env('UI_PASSWORD'))
 
@@ -42,6 +43,9 @@ describe('Debugging', () => {
     cy.get('#login_btn').click()
 
     cy.debug()
+    //fn f8 trigger the debugging in inspect // source
+
+    // in console
 
     /**
      * Sometimes, the pause button on the Sources tab may not work as expected.
